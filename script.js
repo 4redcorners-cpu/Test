@@ -23,16 +23,14 @@ function pad(number) {
 
 function createDialNumbers() {
   const numbersContainer = document.querySelector(".numbers");
-  const radius = 40;
+  numbersContainer.innerHTML = "";
 
   for (let number = 1; number <= 12; number += 1) {
     const mark = document.createElement("span");
-    const angle = (number / 12) * Math.PI * 2;
-    const x = Math.sin(angle) * radius;
-    const y = -Math.cos(angle) * radius;
+    const angle = number * 30;
 
     mark.textContent = String(number);
-    mark.style.transform = `translate(-50%, -50%) translate(${x}%, ${y}%)`;
+    mark.style.setProperty("--angle", `${angle}deg`);
     numbersContainer.appendChild(mark);
   }
 }

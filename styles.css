@@ -160,10 +160,17 @@ body.dark .dial {
   position: absolute;
   left: 50%;
   top: 50%;
+  width: 1.9rem;
+  height: 1.9rem;
+  display: grid;
+  place-items: center;
   color: var(--text);
   font-size: clamp(0.9rem, 2.5vw, 1.1rem);
   font-weight: 650;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%) rotate(var(--angle))
+    translateY(calc(-1 * (min(78vw, 290px) / 2 - 26px)))
+    rotate(calc(-1 * var(--angle)));
+  user-select: none;
 }
 
 .hand {
