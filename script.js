@@ -21,6 +21,25 @@ function pad(number) {
   return String(number).padStart(2, "0");
 }
 
+function toRoman(number) {
+  const romanMap = [
+    "I",
+    "II",
+    "III",
+    "IV",
+    "V",
+    "VI",
+    "VII",
+    "VIII",
+    "IX",
+    "X",
+    "XI",
+    "XII",
+  ];
+
+  return romanMap[number - 1] || String(number);
+}
+
 function createDialNumbers() {
   const numbersContainer = document.querySelector(".numbers");
   numbersContainer.innerHTML = "";
@@ -29,7 +48,7 @@ function createDialNumbers() {
     const mark = document.createElement("span");
     const angle = number * 30;
 
-    mark.textContent = String(number);
+    mark.textContent = toRoman(number);
     mark.style.setProperty("--angle", `${angle}deg`);
     numbersContainer.appendChild(mark);
   }
