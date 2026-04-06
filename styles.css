@@ -48,6 +48,30 @@ body.dark {
   padding: 24px;
 }
 
+.widget-frame {
+  width: min(100%, 540px);
+  padding: clamp(12px, 3vw, 20px);
+  border-radius: 34px;
+  position: relative;
+  isolation: isolate;
+}
+
+.widget-frame::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background-color: #efede8;
+  background-image:
+    radial-gradient(120% 80% at 10% 12%, transparent 77%, #faf9f6 78% 84%, transparent 85%),
+    radial-gradient(92% 72% at 86% 8%, transparent 76%, #faf9f6 77% 83%, transparent 84%),
+    radial-gradient(100% 66% at 22% 92%, transparent 78%, #faf9f6 79% 85%, transparent 86%),
+    radial-gradient(90% 100% at 92% 78%, transparent 77%, #faf9f6 78% 84%, transparent 85%),
+    radial-gradient(80% 86% at 50% 52%, transparent 78%, #faf9f6 79% 85%, transparent 86%);
+  box-shadow: inset 0 0 0 1px rgba(208, 203, 195, 0.9);
+  z-index: -1;
+}
+
 .clock-widget {
   width: min(100%, 460px);
   padding: clamp(18px, 4vw, 30px);
@@ -156,6 +180,17 @@ body.dark .dial {
   background: radial-gradient(circle at 30% 30%, #222f50, #1a2236);
 }
 
+body.dark .widget-frame::before {
+  background-color: #1f2635;
+  background-image:
+    radial-gradient(120% 80% at 10% 12%, transparent 77%, #2a3348 78% 84%, transparent 85%),
+    radial-gradient(92% 72% at 86% 8%, transparent 76%, #2a3348 77% 83%, transparent 84%),
+    radial-gradient(100% 66% at 22% 92%, transparent 78%, #2a3348 79% 85%, transparent 86%),
+    radial-gradient(90% 100% at 92% 78%, transparent 77%, #2a3348 78% 84%, transparent 85%),
+    radial-gradient(80% 86% at 50% 52%, transparent 78%, #2a3348 79% 85%, transparent 86%);
+  box-shadow: inset 0 0 0 1px rgba(74, 92, 129, 0.6);
+}
+
 .numbers span {
   position: absolute;
   left: 50%;
@@ -222,5 +257,9 @@ body.dark .dial {
 
   .clock-widget {
     border-radius: 20px;
+  }
+
+  .widget-frame {
+    border-radius: 28px;
   }
 }

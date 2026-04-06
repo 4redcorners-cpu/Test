@@ -8,42 +8,44 @@
 </head>
 <body>
   <main class="page">
-    <section class="clock-widget" aria-label="Виджет часов">
-      <header class="widget-header">
-        <h1 class="widget-title">Текущее время</h1>
-        <p class="widget-subtitle" id="dateLabel">--</p>
-      </header>
+    <div class="widget-frame">
+      <section class="clock-widget" aria-label="Виджет часов">
+        <header class="widget-header">
+          <h1 class="widget-title">Текущее время</h1>
+          <p class="widget-subtitle" id="dateLabel">--</p>
+        </header>
 
-      <div class="controls" role="group" aria-label="Настройки часов">
-        <button id="modeToggle" class="control-btn" type="button" aria-pressed="false">
-          Аналоговые
-        </button>
-        <button id="themeToggle" class="control-btn" type="button" aria-pressed="false">
-          Тёмная тема
-        </button>
-      </div>
-
-      <section id="digitalClock" class="clock-display digital active" aria-live="polite">
-        <div class="digital-time">
-          <span id="hours">00</span>
-          <span class="separator">:</span>
-          <span id="minutes">00</span>
-          <span class="separator">:</span>
-          <span id="seconds">00</span>
+        <div class="controls" role="group" aria-label="Настройки часов">
+          <button id="modeToggle" class="control-btn" type="button" aria-pressed="false">
+            Аналоговые
+          </button>
+          <button id="themeToggle" class="control-btn" type="button" aria-pressed="false">
+            Тёмная тема
+          </button>
         </div>
-        <p class="timezone" id="timezoneLabel">Local Time</p>
-      </section>
 
-      <section id="analogClock" class="clock-display analog" aria-label="Аналоговый циферблат">
-        <div class="dial">
-          <div class="numbers" aria-hidden="true"></div>
-          <div class="hand hour" id="hourHand"></div>
-          <div class="hand minute" id="minuteHand"></div>
-          <div class="hand second" id="secondHand"></div>
-          <div class="center-dot"></div>
-        </div>
+        <section id="digitalClock" class="clock-display digital active" aria-live="polite">
+          <div class="digital-time">
+            <span id="hours">00</span>
+            <span class="separator">:</span>
+            <span id="minutes">00</span>
+            <span class="separator">:</span>
+            <span id="seconds">00</span>
+          </div>
+          <p class="timezone" id="timezoneLabel">Local Time</p>
+        </section>
+
+        <section id="analogClock" class="clock-display analog" aria-label="Аналоговый циферблат">
+          <div class="dial">
+            <div class="numbers" aria-hidden="true"></div>
+            <div class="hand hour" id="hourHand"></div>
+            <div class="hand minute" id="minuteHand"></div>
+            <div class="hand second" id="secondHand"></div>
+            <div class="center-dot"></div>
+          </div>
+        </section>
       </section>
-    </section>
+    </div>
   </main>
 
   <script src="./script.js"></script>
