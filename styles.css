@@ -49,6 +49,8 @@ body.dark {
 }
 
 .clock-widget {
+  position: relative;
+  isolation: isolate;
   width: min(100%, 460px);
   padding: clamp(18px, 4vw, 30px);
   border-radius: 26px;
@@ -56,6 +58,27 @@ body.dark {
   border: 1px solid color-mix(in srgb, var(--ring) 70%, transparent);
   box-shadow: var(--shadow);
   backdrop-filter: blur(10px);
+}
+
+.widget-pattern {
+  position: absolute;
+  inset: -32px;
+  border-radius: 36px;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(circle at 24% 18%, color-mix(in srgb, var(--accent) 35%, transparent) 0 3px, transparent 4px),
+    radial-gradient(circle at 76% 82%, color-mix(in srgb, var(--accent-soft) 35%, transparent) 0 3px, transparent 4px),
+    repeating-radial-gradient(
+      circle at center,
+      color-mix(in srgb, var(--ring) 35%, transparent) 0 2px,
+      transparent 2px 16px
+    );
+  opacity: 0.95;
+}
+
+body.dark .widget-pattern {
+  opacity: 0.7;
 }
 
 .widget-header {
